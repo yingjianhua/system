@@ -7,6 +7,9 @@
 		<property name="username" value="root"/>
 		<property name="password" value="root"/>
 	</properties>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
 	<!-- 类型别名 -->
 	<typeAliases></typeAliases>
 	<!-- 类型处理器 -->
@@ -20,13 +23,14 @@
 				<property name="username" value="${username}"/>
 				<property name="password" value="${password}"/>
 				<property name="poolMaximumActiveConnections" value="100"/>
-				<property name="poolMaximumIdleConnections " value="5"/>
+				<property name="poolMaximumIdleConnections" value="5"/>
 				<property name="poolMaximumCheckoutTime" value="20"/>
 				<property name="poolTimeToWait" value="20"/>
 			</dataSource>
 		</environment>
 	</environments>
 	<mappers>
+		<mapper resource="com/yjh/system/mapper/SysUserMapper.xml"/>
 		<package name="com.yjh.system.mapper"/>
 	</mappers>
 </configuration>

@@ -26,4 +26,7 @@
 			</dataSource>
 		</environment>
 	</environments>
+	<mappers>
+		<package name="com.yjh.system.mapper"/>
+	</mappers>
 </configuration>

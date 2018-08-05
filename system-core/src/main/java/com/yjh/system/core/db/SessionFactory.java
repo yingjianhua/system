@@ -21,34 +21,34 @@ public class SessionFactory {
 		}
 	}
 
-	public SqlSession currentSession() {
+	public static SqlSession currentSession() {
 		if(sqlSession.get() == null)
 			sqlSession.set(sqlSessionFactory.openSession());
 		return sqlSession.get();
 	}
-	public void commit() {
+	public static void commit() {
 		SqlSession session = sqlSession.get();
 		if(session != null)
 			session.commit();
 	}
-	public void rollback() {
+	public static void rollback() {
 		SqlSession session = sqlSession.get();
 		if(session != null)
 			session.rollback();
 	}
-	public void close() {
+	public static void close() {
 		SqlSession session = sqlSession.get();
 		if(session != null)
 			sqlSession.remove();
 	}
-	public void commitAndClose() {
+	public static void commitAndClose() {
 		SqlSession session = sqlSession.get();
 		if(session != null) {
 			session.commit();
 			sqlSession.remove();
 		}
 	}
-	public void rollbackAndClose() {
+	public static void rollbackAndClose() {
 		SqlSession session = sqlSession.get();
 		if(session != null) {
 			session.rollback();
